@@ -1,0 +1,12 @@
+Follow the steps below to execute the script
+
+Project Setup
+In a terminal navigate to GoogleAccountAutomator and execute the following commands:
+1.  pip install virtualenv
+2.  virtualenv venv
+3.  source venv/bin/activate (for MacOS, Linux Based Operating systems)
+    .\env\Scripts\activate  (for Windows)
+4. pip install -r requirements.txt
+
+Navigate to CreateAccunt directory in the terminal
+5. python scriptClassVersion.py  (To run the script)
