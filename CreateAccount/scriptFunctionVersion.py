@@ -1,8 +1,12 @@
 from time import sleep
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import *
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support import expected_conditions as ec
 
 URL = 'http://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp'
 browser = webdriver.Chrome(ChromeDriverManager().install())
@@ -96,6 +100,11 @@ def account(inputParams):
     sleep(5)
     browser.find_element_by_xpath(agreeXpath).click()  # Terms and conditions agree
 
+    # Explicit Wait
+    # element = WebDriverWait(browser, 10, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException,StaleElementReferenceException]).until(
+    #     ec.presence_of_element_located((By.XPATH, agreeXpath))
+    # )
+
     print("Account Created Successfully !!")
 
 
@@ -135,3 +144,6 @@ if __name__ == '__main__':
     }
 
     account(inputParams=details)
+
+
+
